@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Printing Services</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">Printing Services</div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact" id="contactLink">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Banner -->
+    <section id="home" class="banner">
+        <h1>Your Trusted Printing Partner</h1>
+        <a href="#order" class="btn">Get Started</a>
+    </section>
+
+    <!-- Services Overview -->
+    <section id="services" class="services">
+        <h2>Our Services</h2>
+        <div class="service-cards">
+            <div class="service-card">
+                <h3>Document Printing</h3>
+                <p>High-quality document printing for all your needs.</p>
+            </div>
+            <div class="service-card">
+                <h3>Poster Printing</h3>
+                <p>Eye-catching posters for events and promotions.</p>
+            </div>
+            <div class="service-card">
+                <h3>Tarpaulin Printing</h3>
+                <p>Durable tarpaulins for advertising and signage.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Image Carousel -->
+    <section class="carousel">
+        <h2>Our Work</h2>
+        <div class="carousel-container">
+            <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+            <div class="carousel-slide">
+                <img src="image1.jpg" alt="Image 1">
+                <img src="image2.jpg" alt="Image 2">
+                <img src="image3.jpg" alt="Image 3">
+                <img src="image4.jpg" alt="Image 4">
+            </div>
+            <button class="next" onclick="moveSlide(1)">&#10095;</button>
+        </div>
+    </section>
+
+    <!-- Order Button -->
+    <section id="order" class="order-section">
+        <h2>Place Your Order</h2>
+        <button id="orderButton" class="btn">Order Now</button>
+    </section>
+
+    <!-- Order Modal -->
+    <div id="orderModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Place Your Order</h2>
+            <form id="orderForm">
+                <label for="file">Upload File:</label>
+                <input type="file" id="file" name="file" required>
+                
+                <label for="serviceType">Service Type:</label>
+                <select id="serviceType" name="serviceType" required>
+                    <option value="document">Document</option>
+                    <option value="poster">Poster</option>
+                    <option value="tarpaulin">Tarpaulin</option>
+                </select>
+                
+                <label for="size">Size:</label>
+                <select id="size" name="size" required>
+                    <option value="A4">A4</option>
+                    <option value="A3">A3</option>
+                    <option value="custom">Custom</option>
+                </select>
+                
+                <label for="pages">Number of Pages:</label>
+                <input type="number" id="pages" name="pages" min="1" required>
+                
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" name="quantity" min="1" required>
+                
+                <label for="pickupDate">Pickup Date:</label>
+                <input type="date" id="pickupDate" name="pickupDate" required>
+                
+                <label for="instructions">Special Instructions:</label>
+                <textarea id="instructions" name="instructions"></textarea>
+                
+                <button type="button" onclick="submitOrder()">Place Order</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Contact Modal -->
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Contact Us</h2>
+            <form id="contactForm">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+                
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
